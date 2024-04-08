@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshini's Website</title>
+    <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <a class="offpage" href="#main">Skip to Main Content</a>
+    <header>
+        <nav>
+            <button type="button" class="icon">
+                <img src="images/toggle.svg" alt="toggle button" />
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a class = "active" href="soundboard.html">Soundboard</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <div>
+            <h1>Album Reviews</h1>
+        </div>
+        <form id="myForm">
+        <div>
+            <label>Enter the year the album was released</label>
+            <input name="Year" />
+        </div>
+        <br/>
+        <div>
+            <label>Enter the album name</label>
+            <input name="Album Name" />
+        </div>
+            <br/>
+        <div>
+            <label>Enter a link to the album cover</label>
+            <input name="ImgURL" />
+        </div>
+            <br/>
+        <div>
+            <label>Who is the artist</label>
+            <input name="Singer" />
+        </div>
+            <br/>
+        <div>
+            <label>What genre is the album</label>
+            <input name="Genre" />
+        </div>
+            <br/>
+        <div>
+            <label>What do you rate the album out of 10</label>
+            <input name="NumReview" />
+        </div>
+            <br/>
+        <div>
+            <label>Do you have any comments to add about your rating</label>
+            <input name="Comments" />
+        </div>
+            <br/>
+        </form>
+        <button onclick='SubForm()'>Submit</button>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+<footer>
+    <p>SI 339 Web Development Final Project</p>
+</footer>
+</html>
+

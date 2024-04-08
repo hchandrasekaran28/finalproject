@@ -112,6 +112,20 @@ footer{
     background-color: black;
 }
 
+form{
+    padding: 20px;
+    margin: 10px;
+}
+label{
+    background-color:#5600ff;
+    color: white; 
+    padding: 5px;
+    font-size: 15px;
+    margin: 20px;
+    margin-top: 10px;
+    
+}
+
 @media only screen and (min-width: 768px) {
     /* tablet view*/
 
