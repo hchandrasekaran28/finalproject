@@ -173,6 +173,7 @@ nav {
     display: flex;
     flex-direction: column; /* Display nav items vertically */
     align-items: center; /* Center items horizontally */
+    padding-left: 10px;
 }
 
 body {
