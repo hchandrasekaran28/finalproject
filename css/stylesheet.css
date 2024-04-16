@@ -3,7 +3,17 @@ body {
 }
 
 .icon{
-    display: none;
+    display: block;
+        width: 20px; /* Decrease width for toggle button */
+        border: none;
+        cursor: pointer;
+        appearance: none;
+        background-color: inherit;
+        padding: 0;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    z-index: 1001;
 }
 
 .offpage {
@@ -131,7 +141,7 @@ label{
 
 .icon {
     display: block;
-    width: 145px;
+    width: 20px;
     border: none;
     cursor: pointer;
     appearance: none;
@@ -146,18 +156,70 @@ header{
     top: 0;
     left: 0;
     bottom: 0;
-    width: 145px;
+    width: 200px; /* Adjust width of sidebar */
+    background-color: #ef5391; /* Add background color */
+    z-index: 1000;
 }
 
-/*body {
+main {
+    padding-left: 220px; /* Adjust padding to accommodate sidebar */
+    background-color: black; /* Adjust background color */
+    width: calc(100% - 220px); /* Adjust width to fit remaining space */
+}
+
+nav {
+    overflow: hidden;
+    background-color: #ef5391;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Display nav items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+body {
+    display: flex;
+    justify-content: flex-start;
     background: black;
     margin: 0;
     padding: 0;
-    align-items: center;
-    height: 100vh;
-}*/
+    align-items: flex-start;
+}
+
+.hidden {
+    width: 60px;
+}
+.hidden ul {
+    display: none;
+    flex-direction: column; /* Display sidebar items vertically */
+    padding: 0;
+    margin: 0;
+}
+
+.hidden li {
+    margin: 0;
+    padding: 10px;
+}
+
+.hidden li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hidden li a:hover {
+    background-color: #5fdaed;
+}
+
+.hidden > button {
+    top: 5px;
+}
+
+.bigger-main {
+    padding-left: 50px;
+}
+
+.icon > img {
+    width: inherit;
+}
+
 }
 
 @keyframes quiet {
@@ -300,3 +362,41 @@ header{
 
 }
 
+.album-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.album-card {
+    background-color: #ef5391;
+    border-radius: 10px;
+    border: solid 10px #ef5391;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    max-width: 300px;
+    overflow: hidden;
+}
+
+.album-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.album-info {
+    padding: 20px;
+    font-size: 24px;
+}
+
+.album-info h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.album-info p {
+    margin: 0;
+    color: black;
+}
