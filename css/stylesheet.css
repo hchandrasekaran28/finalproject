@@ -1,19 +1,39 @@
 body {
     font-family: 'Maven Pro', Tahoma, Verdana, sans-serif;
+    background-color: black;
 }
 
-.icon{
-    display: block;
-        width: 20px; /* Decrease width for toggle button */
-        border: none;
-        cursor: pointer;
-        appearance: none;
-        background-color: inherit;
-        padding: 0;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-    z-index: 1001;
+select {
+    font-size: 20px;
+}
+
+#selector {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+#selectorLabel {
+    font-size: 20px;
+    background-color: #5fdaed;
+    color: black;
+    font-weight: bolder;
+    border-radius: 15px;
+    padding: 10px;
+
+}
+
+#viewTypeSelect {
+    padding: 5px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.icon {
+    display: none;
 }
 
 .offpage {
@@ -24,43 +44,56 @@ body {
 .offpage:focus {
     position: relative;
     left: 150px;
+    margin: 15px;
+    color: white;
+    font-size: large;
 }
 
-main{
+main {
     background-color: black;
 }
 
-header{
+header {
     background-color: #ef5391;
 }
 
 nav {
+    background-color: #ef5391;
     overflow: hidden;
-    background-color:#ef5391;
-    justify-content: space-evenly;
+    padding: 1px;
     display: flex;
+    /* Change from grid to flex */
     flex-direction: row;
+    /* Horizontal layout */
+    align-items: center;
+    justify-content: center;
 }
 
-ul {
+input {
+    margin: 5px;
+}
+
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
 }
 
-li a {
-    display: block;
-    width: auto;
-    color: black;
-    font-weight: bolder;
-    text-align: left;
-    padding: 10px;
+nav li {
+    margin: 5px;
+    /* Add margin between list items */
+}
+
+nav li a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
+    color: black;
+    padding: 10px;
     font-size: 15px;
+    background-color: #ef5391;
+    font-weight: 500;
 }
 
 nav li a:hover {
@@ -72,19 +105,20 @@ nav li a.active {
     background-color: #5fdaed;
     color: black;
     font-style: italic;
+    font-weight: 800;
 }
 
-p{
+p {
     color: white;
     font-weight: 500;
     padding: 10px;
 }
 
-footer p{
+footer p {
     font-size: 10px;
 }
 
-.content{
+.content {
     display: flex;
     background-color: black;
     font-size: 20px;
@@ -96,7 +130,7 @@ footer p{
     border: solid 20px #5fdaed;
 }
 
-.content > *{
+.content>* {
     flex: 0 0 50%;
     justify-content: center;
     padding: 10px;
@@ -104,7 +138,7 @@ footer p{
     text-align: center;
 }
 
-h1{
+h1 {
     background-color: black;
     padding: 30px;
     color: white;
@@ -117,109 +151,171 @@ h1{
     border: solid 20px #5600ff;
 }
 
-footer{
+footer {
     color: white;
     background-color: black;
 }
 
-form{
+form {
     padding: 20px;
     margin: 10px;
 }
 
-label{
-    background-color:#5600ff;
-    color: white; 
+label {
+    background-color: #5600ff;
+    color: white;
     padding: 5px;
     font-size: 15px;
     margin: 20px;
     margin-top: 10px;
 }
 
+#subButton {
+    margin-left: 50px;
+    padding: 15px;
+    font-size: 20px;
+    background-color: #5fdaed;
+    font-weight: bolder;
+    border-radius: 90px;
+    margin-bottom: 50px;
+    border: solid 3px white;
+}
+
+.exStyl dix {
+    margin: 5px;
+}
+
 @media only screen and (min-width: 768px) {
     /* tablet view*/
 
-.icon {
-    display: block;
-    width: 20px;
-    border: none;
-    cursor: pointer;
-    appearance: none;
-    background-color: inherit;
-    padding: 0;
-}
-header{
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 200px; /* Adjust width of sidebar */
-    background-color: #ef5391; /* Add background color */
-    z-index: 1000;
-}
+    .icon {
+        display: block;
+        /* Ensure the toggle button is visible */
+        width: 20px;
+        /* Adjust width of the toggle button */
+        height: 20px;
+        /* Adjust height of the toggle button */
+        border: none;
+        cursor: pointer;
+        appearance: none;
+        background-color: inherit;
+        padding: 0;
+        /* Add padding for touch access */
+        position: absolute;
+        /* Fix the position of the toggle button */
+        top: 20px;
+        /* Align the toggle button to the top */
+        left: 20px;
+        /* Position the toggle button to the right of the sidebar */
+        z-index: 1001;
+    }
 
-main {
-    padding-left: 220px; /* Adjust padding to accommodate sidebar */
-    background-color: black; /* Adjust background color */
-    width: calc(100% - 220px); /* Adjust width to fit remaining space */
-}
+    header {
+        position: absolute;
+        flex-direction: column;
+        width: 60px;
+        height: 100%;
+        /* Adjust width of sidebar */
+        background-color: #ef5391;
+        /* Add background color */
+        z-index: 1000;
+    }
 
-nav {
-    overflow: hidden;
-    background-color: #ef5391;
-    display: flex;
-    flex-direction: column; /* Display nav items vertically */
-    align-items: center; /* Center items horizontally */
-    padding-left: 10px;
-}
+    nav {
+        display: flex;
+        /* Change from grid to flex */
+        flex-direction: column;
+        /* vertical layout */
+        height: 100%;
+        width: 150px;
+    }
 
-body {
-    display: flex;
-    justify-content: flex-start;
-    background: black;
-    margin: 0;
-    padding: 0;
-    align-items: flex-start;
-}
+    .hidden {
+        position: fixed;
+        height: 100%;
+        width: 60px;
+        background-color: #ef5391;
+        z-index: 1000;
+    }
 
-.hidden {
-    width: 60px;
-}
-.hidden ul {
-    display: none;
-    flex-direction: column; /* Display sidebar items vertically */
-    padding: 0;
-    margin: 0;
-}
+    .bigger-main {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+        height: 100%;
+    }
 
-.hidden li {
-    margin: 0;
-    padding: 10px;
-}
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-.hidden li a {
-    color: white;
-    text-decoration: none;
-}
+    li a {
+        display: flex;
+        align-items: center;
+        /* Align items vertically in flex container */
+        text-decoration: none;
+        font-size: 15px;
+        padding: 15px;
+        flex-direction: column;
+    }
 
-.hidden li a:hover {
-    background-color: #5fdaed;
-}
+    main {
+        margin-left: 150px;
+        background-color: black;
+        /* Adjust background color */
+        width: calc(100% - 150px);
+        /* Adjust width to fit remaining space */
+        flex: 1;
+        flex-direction: column;
+    }
 
-.hidden > button {
-    top: 5px;
-}
+    body {
+        display: flex;
+        justify-content: flex-start;
+        background: black;
+        margin: 0;
+        padding: 0;
+        align-items: flex-start;
+        flex-direction: column;
+    }
 
-.bigger-main {
-    padding-left: 50px;
-}
+    footer {
+        flex-shrink: 0;
+        margin: 150px;
+    }
 
-.icon > img {
-    width: inherit;
-}
+    .footersizechange {
+        margin: 60px;
+    }
+
+    .hidden ul {
+        display: none;
+        flex-direction: column;
+        /* Display sidebar items vertically */
+        padding: 0;
+        margin: 0;
+    }
+
+    .hidden li {
+        margin: 0;
+    }
+
+    .hidden li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .hidden li a:hover {
+        background-color: #5fdaed;
+    }
+
+
+    .icon>img {
+        width: inherit;
+    }
 
 }
 
@@ -353,11 +449,13 @@ body {
         animation-play-state: paused;
         visibility: hidden;
     }
+
     video {
         animation-play-state: paused;
         visibility: hidden;
     }
-    .box{
+
+    .box {
         animation-play-state: paused;
     }
 
@@ -377,7 +475,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 10px;
     max-width: 300px;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .album-card img {
@@ -395,9 +493,157 @@ body {
     margin-top: 0;
     margin-bottom: 10px;
     color: black;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
 }
 
 .album-info p {
     margin: 0;
     color: black;
+}
+
+.album-cards.card-view {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.album-card.card-view {
+    background-color: #ef5391;
+    border-radius: 10px;
+    border: solid 10px #ef5391;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    max-width: 300px;
+    overflow: auto;
+}
+
+.album-card.card-view img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.album-info.card-view {
+    padding: 20px;
+    font-size: 24px;
+}
+
+.album-info.card-view h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.album-info.card-view p {
+    margin: 0;
+    color: black;
+}
+
+
+.slider-view * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slider-view body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 35px;
+    background: rgb(228, 220, 220);
+}
+
+.album-cards.slider-view {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+
+}
+
+.album-cards.slider-view i {
+    height: 50px;
+    width: 50px;
+    background: #5fdaed;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 1.25 rem;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+
+}
+
+.album-cards.slider-view i:first-child {
+    left: -30px;
+
+}
+
+.album-cards.slider-view i:last-child {
+    right: -10px;
+
+}
+
+.slider-view .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
+
+.carousel.slider-view::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel.slider-view :where(.card, .img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel.slider-view.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel.slider-view.no-transition {
+    scroll-behavior: auto;
+}
+
+.carousel.slider-view.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel.slider-view .card {
+    scroll-snap-align: start;
+    height: 340px;
+    list-style: none;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    cursor: pointer;
+    width: 98%;
+    padding-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
